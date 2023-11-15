@@ -1,0 +1,355 @@
+
+
+#include <stdio.h>
+#include <stdlib.h>
+//#include <time.h>
+
+#include "../CYBER_driver/STD_TYPES.h"
+#include "../CYBER_driver/DIO_interface.h"
+#include "../CYBER_driver/LCD_interface.h"
+#include "../CYBER_driver/USART_interface.h"
+
+
+#define 	LED_ON_ORDER					"3101AA00"
+#define 	LED_ON_REFUSED					"7F3135"
+#define 	LED_ON_ACCEPTED					"7101AA00"
+
+#define 	GET_RAND_KEY					"2701"
+#define 	GET_RAND_KEY_RESPOND			"6701"
+
+#define 	DECRIPT_RAND_KEY				"2702"
+#define 	DECRIPT_RAND_KEY_RESPOND		"6702"
+
+
+#define 	OK						0
+#define 	NON_OK					1
+
+
+static u8 User_Input[20];
+static u8 First_Time_Flag = OK;
+static u8 Random[8];
+static u8 Conc_Key_Respond[13] =  GET_RAND_KEY_RESPOND;
+static u8 Conc_Encrypted_Key_Respond[13] =  DECRIPT_RAND_KEY;
+
+static u8 Input_Counter = 0;
+static u8 Encrypted_Array[9] = {'\0'};
+
+
+/* Function Prototypes */
+void Cyber_voidInit();
+void Get_From_User();
+void Check_User_Input();
+u8 Check_Two_Arrays(u8* arr1 , u8* arr2);
+void Get_Random_Array();
+void Encrytp_Numbers(u8* arr);
+void Led_ON();
+void Led_OFF();
+
+
+
+int main()
+{
+	//u8 Local_u8Data;
+
+	Cyber_voidInit();
+
+	while(1)
+	{
+		Get_From_User();
+		Check_User_Input();
+	}
+
+
+
+
+
+
+//
+//    /* Start to transmit these numbers */
+//    for (u8 i = 0; i < 8; i++)
+//    {
+//		LCD_voidGoToXY(0,i);
+//		LCD_voidWriteCharacter('random[i]');
+//    }
+//	while (1)
+//	{
+//		Local_u8Data = USART_Receive();
+//
+//		LCD_voidGoToXY(0,0);
+//		LCD_voidWriteCharacter(Local_u8Data);
+//
+//		if (Local_u8Data == '1')
+//		{
+//			DIO_voidSetPinValue(DIO_u8PORTC, DIO_u8PIN0, DIO_u8PIN_HIGH);
+//		}
+//		else if (Local_u8Data == '2')
+//		{
+//			DIO_voidSetPinValue(DIO_u8PORTC, DIO_u8PIN0, DIO_u8PIN_LOW);
+//		}
+//		else
+//		{
+//
+//		}
+//
+//		USART_Transmit('D');
+//	}
+	return 0;
+}
+
+
+
+void Cyber_voidInit()
+{
+	DIO_voidSetPinDirection(DIO_u8PORTD, DIO_u8PIN0, DIO_u8PIN_INPUT);
+	DIO_voidSetPinDirection(DIO_u8PORTD, DIO_u8PIN1, DIO_u8PIN_OUTPUT);
+	DIO_voidSetPinDirection(DIO_u8PORTC, DIO_u8PIN0, DIO_u8PIN_OUTPUT);
+
+	LCD_voidInit();
+	USART_Init();
+}
+
+
+
+void Get_From_User()
+{
+	u8 Local_u8UserData;
+	u8 Local_u8Counter = 0;
+	while(1)
+	{
+		Local_u8UserData = USART_Receive();
+
+		if(Local_u8UserData != 0x0D)	// Enter
+		{
+			User_Input[Local_u8Counter] =  Local_u8UserData;
+			LCD_voidWriteCharacter(Local_u8UserData);
+			Local_u8Counter++;
+			Input_Counter++;
+		}
+
+		else if(Local_u8UserData == 0x0D)		// Enter
+		{
+			break;
+		}
+	}
+
+
+		/* Show the user input*/
+	u8 i = 0;
+	//LCD_voidGoToXY(3,0);
+	//while(User_Input[i] != 0x0D)
+	for(i=0; i<Input_Counter; i++)
+	{
+		LCD_voidGoToXY(3,i);
+		LCD_voidWriteCharacter(User_Input[i]);
+		//i++;
+	}
+}
+
+
+
+void Check_User_Input()
+{
+	/* check if it transmit access update the flag .... else show error and do not update the flag */
+	if(First_Time_Flag == NON_OK)
+	{
+		u8 Local_u8CheckResult = 0;
+		//Conc_Key_Respond[0] = DECRIPT_RAND_KEY;
+		//strcpy(Conc_Key_Respond , DECRIPT_RAND_KEY);
+		strcat(Conc_Encrypted_Key_Respond , Encrypted_Array);
+
+		Conc_Encrypted_Key_Respond[12] = '\0';
+		/* Display on LCD */
+		u8 Local_u8Couneter = 0;
+		while(Conc_Encrypted_Key_Respond[Local_u8Couneter] != '\0')
+		{
+			LCD_voidGoToXY(2, Local_u8Couneter);
+			LCD_voidWriteCharacter(Conc_Encrypted_Key_Respond[Local_u8Couneter]);
+			Local_u8Couneter++;
+		}
+
+		Local_u8CheckResult = Check_Two_Arrays(User_Input , Conc_Encrypted_Key_Respond);
+		if(Local_u8CheckResult == 1)
+		{
+			u8 Local_u8Counter = 0;
+			while(DECRIPT_RAND_KEY_RESPOND[Local_u8Counter] != '\0')
+			{
+				USART_Transmit(DECRIPT_RAND_KEY_RESPOND[Local_u8Counter]);
+				Local_u8Counter++;
+			}
+			LCD_voidClear();
+		}
+
+		else if(Local_u8CheckResult == 0)
+		{
+//			Local_u8CheckResult = Check_Two_Arrays(User_Input , Conc_Key_Respond);
+//			if(Local_u8CheckResult == 1)
+//			{
+//				u8 Local_u8Counter = 0;
+//				while(DECRIPT_RAND_KEY_RESPOND[Local_u8Counter] != '\0')
+//				{
+//					USART_Transmit(DECRIPT_RAND_KEY_RESPOND[Local_u8Counter]);
+//					Local_u8Counter++;
+//				}
+//				LCD_voidClear();
+//			}
+//
+//			else if(Local_u8CheckResult == 0)
+//			{
+				u8 Local_u8CheckResult = 0;
+				Local_u8CheckResult = Check_Two_Arrays(User_Input , LED_ON_ORDER);
+
+				if(Local_u8CheckResult == 1)
+				{
+					u8 Local_u8Counter = 0;
+					while(LED_ON_ACCEPTED[Local_u8Counter] != '\0')
+					{
+						USART_Transmit(LED_ON_ACCEPTED[Local_u8Counter]);
+						Local_u8Counter++;
+					}
+				}
+				Led_ON();
+
+				LCD_voidClear();
+			//}
+		}
+	}
+
+
+    else if (First_Time_Flag == OK)
+	{
+		u8 Local_u8CheckResult = 0;
+		Local_u8CheckResult = Check_Two_Arrays(User_Input , GET_RAND_KEY);		// 2701
+		if(Local_u8CheckResult == 1)
+		{
+			u8 Local_u8Counter = 0;
+			Get_Random_Array();		// Random
+
+			strcat(Conc_Key_Respond , Random);
+			Conc_Key_Respond [12] = '\0';
+			while(Conc_Key_Respond[Local_u8Counter] != '\0')
+			{
+				USART_Transmit(Conc_Key_Respond[Local_u8Counter]);
+				Local_u8Counter++;
+			}
+			LCD_voidClear();
+			Encrytp_Numbers(Random);
+			LCD_voidGoToXY(0,0);
+
+			First_Time_Flag = NON_OK;
+//				u8 Local_u8Couneter = 0;
+//				while(Encrypted_Array[Local_u8Couneter] != '\0')
+//				{
+//					LCD_voidGoToXY(2, Local_u8Couneter);
+//					LCD_voidWriteCharacter(Encrypted_Array[Local_u8Couneter]);
+//					Local_u8Couneter++;
+//				}
+		}
+
+		else
+		{
+			u8 Local_u8Counter = 0;
+			while(LED_ON_REFUSED[Local_u8Counter] != '\0')
+			{
+				USART_Transmit(LED_ON_REFUSED[Local_u8Counter]);
+				Local_u8Counter++;
+			}
+			LCD_voidClear();
+
+		}
+
+	//User_Input[] = {'\0'};
+	Input_Counter = 0;
+	}
+}
+
+
+
+u8 Check_Two_Arrays(u8* arr1 , u8* arr2)
+{
+	u8 Local_u8Count = 0;
+	u8 Counter = 0;
+
+	for ( ; Local_u8Count < Input_Counter; )
+//	while(arr1[Local_u8Count] != '\0')
+	{
+		if(arr1[Local_u8Count] == arr2[Local_u8Count])
+		{
+			Counter++;
+			Local_u8Count++;
+			continue;
+		}
+		else
+		{
+			Local_u8Count ++;
+		}
+	}
+	if(Counter == Local_u8Count)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+
+void Get_Random_Array()
+{
+    // Generate 8 random numbers
+    for (u8 i = 0; i < 8; i++)
+    {
+        Random[i] = (rand() %10) + '0';
+    }
+}
+
+
+
+void Encrytp_Numbers(u8* arr)
+{
+	/* Assume Key = 3 */
+	u8 Local_u8Couneter = 0;
+	while(arr[Local_u8Couneter] != '\0')
+	{
+//		if(Local_u8Couneter > 3)	// the 4th element
+//		{
+			if(((arr[Local_u8Couneter] -'0') ^ 3) <= 9)
+			{
+			Encrypted_Array[Local_u8Couneter] = ((arr[Local_u8Couneter] -'0') ^ 3) + ('0');
+			Local_u8Couneter++;
+			}
+
+			else if(((arr[Local_u8Couneter] -'0') ^ 3) > 9)
+			{
+				Encrypted_Array[Local_u8Couneter] = ((arr[Local_u8Couneter] -'0') ^ 3) -10 + ('A');
+				Local_u8Couneter++;
+			}
+//		}
+//		else
+//		{
+//			Encrypted_Array[Local_u8Couneter] = arr[Local_u8Couneter];
+//			Local_u8Couneter++;
+//		}
+	}
+	Local_u8Couneter = 0;
+	while(Encrypted_Array[Local_u8Couneter] != '\0')
+	{
+		LCD_voidGoToXY(2, Local_u8Couneter);
+		LCD_voidWriteCharacter(Encrypted_Array[Local_u8Couneter]);
+		Local_u8Couneter++;
+	}
+}
+
+
+
+
+
+void Led_ON()
+{
+	DIO_voidSetPinValue(DIO_u8PORTC, DIO_u8PIN0, DIO_u8PIN_HIGH);
+}
+
+void Led_OFF()
+{
+	DIO_voidSetPinValue(DIO_u8PORTC, DIO_u8PIN0, DIO_u8PIN_LOW);
+}

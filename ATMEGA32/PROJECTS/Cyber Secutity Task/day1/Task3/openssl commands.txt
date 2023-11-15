@@ -1,0 +1,16 @@
+/* generate a private key */
+genpkey -algorithm RSA -out private_key.pem
+
+/* generate a private key with password */
+genpkey -algorithm RSA -out private_key.pem -aes256
+
+/* generate apublic key */
+rsa -in private_key.pem -pubout -out public_key.pem
+
+/* grt the mod of public and private keys */
+rsa -pubin -in public_key.pem -modulus -noout
+rsa -in private_key.pem -modulus -noout
+
+/* Generate Certificates */
+req -new -key private_key.pem -out csr.pem
+x509 -req -in csr.pem -signkey private_key.pem -out certificate.pem
