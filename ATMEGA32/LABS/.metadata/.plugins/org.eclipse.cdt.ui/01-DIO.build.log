@@ -1,0 +1,66 @@
+11:00:26 **** Build of configuration Debug for project 01-DIO ****
+make all 
+Building file: ../DIO_driver/DIO_program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"DIO_driver/DIO_program.d" -MT"DIO_driver/DIO_program.o" -c -o "DIO_driver/DIO_program.o" "../DIO_driver/DIO_program.c"
+Finished building: ../DIO_driver/DIO_program.c
+ 
+Building file: ../DIO_apps/00-main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"DIO_apps/00-main.d" -MT"DIO_apps/00-main.o" -c -o "DIO_apps/00-main.o" "../DIO_apps/00-main.c"
+In file included from ../DIO_apps/00-main.c:21:
+d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../DIO_apps/00-main.c
+ 
+Building file: ../DIO_apps/01-LED_BLINKING.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"DIO_apps/01-LED_BLINKING.d" -MT"DIO_apps/01-LED_BLINKING.o" -c -o "DIO_apps/01-LED_BLINKING.o" "../DIO_apps/01-LED_BLINKING.c"
+In file included from ../DIO_apps/01-LED_BLINKING.c:15:
+d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../DIO_apps/01-LED_BLINKING.c
+ 
+Building file: ../DIO_apps/02-TOGGLE_LEDS.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"DIO_apps/02-TOGGLE_LEDS.d" -MT"DIO_apps/02-TOGGLE_LEDS.o" -c -o "DIO_apps/02-TOGGLE_LEDS.o" "../DIO_apps/02-TOGGLE_LEDS.c"
+In file included from ../DIO_apps/02-TOGGLE_LEDS.c:15:
+d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../DIO_apps/02-TOGGLE_LEDS.c
+ 
+Building file: ../DIO_apps/03-PUSH_BUTTON.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"DIO_apps/03-PUSH_BUTTON.d" -MT"DIO_apps/03-PUSH_BUTTON.o" -c -o "DIO_apps/03-PUSH_BUTTON.o" "../DIO_apps/03-PUSH_BUTTON.c"
+In file included from ../DIO_apps/03-PUSH_BUTTON.c:16:
+d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../DIO_apps/03-PUSH_BUTTON.c
+ 
+Building target: 01-DIO.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,01-DIO.map -mmcu=atmega32 -o "01-DIO.elf"  ./DIO_driver/DIO_program.o  ./DIO_apps/00-main.o ./DIO_apps/01-LED_BLINKING.o ./DIO_apps/02-TOGGLE_LEDS.o ./DIO_apps/03-PUSH_BUTTON.o   
+Finished building target: 01-DIO.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S 01-DIO.elf  >"01-DIO.lss"
+Finished building: 01-DIO.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 01-DIO.elf  "01-DIO.hex"
+Finished building: 01-DIO.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6654 bytes (20.3% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+11:00:28 Build Finished (took 1s.866ms)
+

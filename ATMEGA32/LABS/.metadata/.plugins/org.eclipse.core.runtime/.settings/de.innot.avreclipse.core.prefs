@@ -1,0 +1,10 @@
+avrpaths//systempath/AVRDUDE=
+avrpaths//systempath/AVRGCC=
+avrpaths//systempath/AVRINCLUDE=
+avrpaths//systempath/MAKE=
+avrpaths//systempath/PDFPATH=
+avrpaths/AVRDUDE=D\:\\Courses\\ES\\Eclipse\\WinAVR\\bin
+avrpaths/AVRGCC=D\:\\Courses\\ES\\Eclipse\\WinAVR\\bin
+avrpaths/AVRINCLUDE=D\:\\Courses\\ES\\Eclipse\\WinAVR\\avr\\include
+avrpaths/MAKE=D\:\\Courses\\ES\\Eclipse\\WinAVR\\utils\\bin
+eclipse.preferences.version=1
