@@ -1,0 +1,19 @@
+RTOS_driver/DIO_program.o RTOS_driver/DIO_program.o:  \
+ ../RTOS_driver/DIO_program.c ../RTOS_driver/STD_TYPES.h \
+  ../RTOS_driver/BIT_MATH.h ../RTOS_driver/REG_MATH.h \
+  ../RTOS_driver/DIO_interface.h ../RTOS_driver/DIO_register.h \
+  ../RTOS_driver/DIO_private.h ../RTOS_driver/DIO_config.h
+
+../RTOS_driver/STD_TYPES.h:
+
+../RTOS_driver/BIT_MATH.h:
+
+../RTOS_driver/REG_MATH.h:
+
+../RTOS_driver/DIO_interface.h:
+
+../RTOS_driver/DIO_register.h:
+
+../RTOS_driver/DIO_private.h:
+
+../RTOS_driver/DIO_config.h:

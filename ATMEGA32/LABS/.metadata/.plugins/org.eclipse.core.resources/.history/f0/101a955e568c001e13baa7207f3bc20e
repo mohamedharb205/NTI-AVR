@@ -1,0 +1,30 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../RTOS_driver/DIO_program.c \
+../RTOS_driver/RTOS_program.c \
+../RTOS_driver/TIMER0_program.c 
+
+OBJS += \
+./RTOS_driver/DIO_program.o \
+./RTOS_driver/RTOS_program.o \
+./RTOS_driver/TIMER0_program.o 
+
+C_DEPS += \
+./RTOS_driver/DIO_program.d \
+./RTOS_driver/RTOS_program.d \
+./RTOS_driver/TIMER0_program.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+RTOS_driver/%.o: ../RTOS_driver/%.c
+	@echo 'Building file: $<'
+	@echo 'Invoking: AVR Compiler'
+	avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

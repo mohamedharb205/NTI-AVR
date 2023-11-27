@@ -1,0 +1,1 @@
+RTOS_apps/main.o RTOS_apps/main.o: ../RTOS_apps/main.c

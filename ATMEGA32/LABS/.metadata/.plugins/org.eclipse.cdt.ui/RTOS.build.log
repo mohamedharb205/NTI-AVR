@@ -1,0 +1,40 @@
+12:53:37 **** Incremental Build of configuration Debug for project RTOS ****
+make all 
+Building file: ../RTOS_apps/main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
+In file included from ../RTOS_apps/main.c:24:
+d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../RTOS_apps/main.c
+ 
+Building target: RTOS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
+Finished building target: RTOS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS.elf  >"RTOS.lss"
+Finished building: RTOS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
+Finished building: RTOS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3522 bytes (10.7% Full)
+(.text + .data + .bootloader)
+
+Data:         31 bytes (1.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+12:53:37 Build Finished (took 623ms)
+
