@@ -1,0 +1,120 @@
+/*****************************************************************************************/
+/*****************************************************************************************/
+/***********************		AUTHOR	:	MOHAMED HARB		**************************/
+/***********************		LAYER	:	MCAL				**************************/
+/***********************		SWC		:	PORT				**************************/
+/***********************		DATE	:	OCT 20, 2023		**************************/
+/***********************		VERSION	:	V01					**************************/
+/*****************************************************************************************/
+/*****************************************************************************************/
+
+
+#ifndef MCAL_PORT_PORT_CONFIG_H_
+#define MCAL_PORT_PORT_CONFIG_H_
+
+
+
+#define 		INPUT 					0
+#define 		OUTPUT 					1
+
+#define 		LOW 					0
+#define 		HIGH 					1
+
+#define 		FLOATING 				0
+#define 		PULLEDUP 				1
+
+
+
+/***********************************************************************/
+/********	Pin Direction Configuration Options : 				********/
+/********										1- INPUT 		********/
+/********										2- OUTPUT 		********/
+/***********************************************************************/
+
+#define 		PORTA_PIN0_DIR  		INPUT
+#define 		PORTA_PIN1_DIR  		INPUT
+#define 		PORTA_PIN2_DIR  		INPUT
+#define 		PORTA_PIN3_DIR  		INPUT
+#define 		PORTA_PIN4_DIR  		INPUT
+#define 		PORTA_PIN5_DIR  		INPUT
+#define 		PORTA_PIN6_DIR  		INPUT
+#define 		PORTA_PIN7_DIR  		INPUT
+
+#define 		PORTB_PIN0_DIR  		INPUT
+#define 		PORTB_PIN1_DIR  		INPUT
+#define 		PORTB_PIN2_DIR  		INPUT
+#define 		PORTB_PIN3_DIR  		INPUT
+#define 		PORTB_PIN4_DIR  		INPUT
+#define 		PORTB_PIN5_DIR  		INPUT	// MOSI
+#define 		PORTB_PIN6_DIR  		OUTPUT	// MISO
+#define 		PORTB_PIN7_DIR  		INPUT	// SCK
+
+#define 		PORTC_PIN0_DIR  		INPUT
+#define 		PORTC_PIN1_DIR  		INPUT
+#define 		PORTC_PIN2_DIR  		INPUT
+#define 		PORTC_PIN3_DIR  		INPUT
+#define 		PORTC_PIN4_DIR  		INPUT
+#define 		PORTC_PIN5_DIR  		INPUT
+#define 		PORTC_PIN6_DIR  		INPUT
+#define 		PORTC_PIN7_DIR  		INPUT
+
+#define 		PORTD_PIN0_DIR  		INPUT
+#define 		PORTD_PIN1_DIR  		INPUT
+#define 		PORTD_PIN2_DIR  		INPUT
+#define 		PORTD_PIN3_DIR  		INPUT
+#define 		PORTD_PIN4_DIR  		INPUT
+#define 		PORTD_PIN5_DIR  		INPUT
+#define 		PORTD_PIN6_DIR  		INPUT
+#define 		PORTD_PIN7_DIR  		INPUT
+
+
+
+
+/*******************************************************************************/
+/**********		Pin Initial Value Configuration Options : 			************/
+/**********				1- In case of INPUT PIN:					************/
+/**********											1- LOW 			************/
+/**********											2- HIGH 		************/
+/**********				2- In case of OUTPUT PIN:					************/
+/**********											1- FLOATING 	************/
+/**********											2- PULLEDUP 	************/
+/*******************************************************************************/
+
+#define 		PORTA_PIN0_V  		FLOATING
+#define 		PORTA_PIN1_V  		FLOATING
+#define 		PORTA_PIN2_V  		FLOATING
+#define 		PORTA_PIN3_V  		FLOATING
+#define 		PORTA_PIN4_V  		FLOATING
+#define 		PORTA_PIN5_V  		FLOATING
+#define 		PORTA_PIN6_V  		FLOATING
+#define 		PORTA_PIN7_V  		FLOATING
+
+#define 		PORTB_PIN0_V  		FLOATING
+#define 		PORTB_PIN1_V  		FLOATING
+#define 		PORTB_PIN2_V  		FLOATING
+#define 		PORTB_PIN3_V  		FLOATING
+#define 		PORTB_PIN4_V  		FLOATING
+#define 		PORTB_PIN5_V  		PULLEDUP			// MOSI
+#define 		PORTB_PIN6_V  		LOW					// MISO
+#define 		PORTB_PIN7_V  		PULLEDUP			// SCK
+
+#define 		PORTC_PIN0_V  		FLOATING
+#define 		PORTC_PIN1_V  		FLOATING
+#define 		PORTC_PIN2_V  		FLOATING
+#define 		PORTC_PIN3_V  		FLOATING
+#define 		PORTC_PIN4_V  		FLOATING
+#define 		PORTC_PIN5_V  		FLOATING
+#define 		PORTC_PIN6_V  		FLOATING
+#define 		PORTC_PIN7_V  		FLOATING
+
+#define 		PORTD_PIN0_V  		FLOATING
+#define 		PORTD_PIN1_V  		FLOATING
+#define 		PORTD_PIN2_V  		FLOATING
+#define 		PORTD_PIN3_V  		FLOATING
+#define 		PORTD_PIN4_V  		FLOATING
+#define 		PORTD_PIN5_V  		FLOATING
+#define 		PORTD_PIN6_V  		FLOATING
+#define 		PORTD_PIN7_V  		FLOATING
+
+
+#endif /* MCAL_PORT_PORT_CONFIG_H_ */

@@ -1,0 +1,123 @@
+/*****************************************************************************************/
+/*****************************************************************************************/
+/***********************		AUTHOR	:	MOHAMED HARB		**************************/
+/***********************		LAYER	:	MCAL				**************************/
+/***********************		SWC		:	SPI					**************************/
+/***********************		DATE	:	OCT 30, 2023		**************************/
+/***********************		VERSION	:	V01					**************************/
+/*****************************************************************************************/
+/*****************************************************************************************/
+
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+#include "SPI_interface.h"
+#include "SPI_register.h"
+#include "SPI_private.h"
+#include "SPI_config.h"
+
+
+
+void SPI_voidInit(void)
+{
+	/* 1- Select the node type */
+	#if		SPI_NODE_TYPE == MASTER
+			SET_BIT(SPCR, SPCR_MSTR);
+	#elif	SPI_NODE_TYPE == SLAVE
+			CLR_BIT(SPCR, SPCR_MSTR);
+	#else
+		#error	Wrong SPI_NODE_TYPE Configuration Option
+	#endif
+
+	/* 2- Select the data order */
+	#if		SPI_DATA_ORDER == LSB
+			SET_BIT(SPCR, SPCR_DORD);
+	#elif	SPI_DATA_ORDER == MSB
+			CLR_BIT(SPCR, SPCR_DORD);
+	#else
+		#error	Wrong SPI_DATA_ORDER Configuration Option
+	#endif
+
+	/* 3- Select the clock polarity */
+	#if		SPI_CLOCK_POLARITY == IDLE_LOW
+			CLR_BIT(SPCR, SPCR_CPOL);
+	#elif	SPI_CLOCK_POLARITY == IDLE_HIGH
+			SET_BIT(SPCR, SPCR_CPOL);
+	#else
+		#error	Wrong SPI_CLOCK_POLARITY Configuration Option
+	#endif
+
+	/* 4- Select the clock phase */
+	#if		SPI_CLOCK_PHASE == SAMPLE
+			CLR_BIT(SPCR, SPCR_CPHA);
+	#elif	SPI_CLOCK_PHASE == SETUP
+			SET_BIT(SPCR, SPCR_CPHA);
+	#else
+		#error	Wrong SPI_CLOCK_PHASE Configuration Option
+	#endif
+
+	/* 5- Select the SPI prescaler */
+	#if		SPI_PRESCALER == DIVIDED_BY_2
+			SET_BIT(SPSR, SPSR_SPI2X);
+			CLR_BIT(SPCR, SPCR_SPR1);
+			CLR_BIT(SPCR, SPCR_SPR0);
+
+	#elif	SPI_PRESCALER == DIVIDED_BY_4
+			CLR_BIT(SPSR, SPSR_SPI2X);
+			CLR_BIT(SPCR, SPCR_SPR1);
+			CLR_BIT(SPCR, SPCR_SPR0);
+
+	#elif	SPI_PRESCALER == DIVIDED_BY_8
+			SET_BIT(SPSR, SPSR_SPI2X);
+			CLR_BIT(SPCR, SPCR_SPR1);
+			SET_BIT(SPCR, SPCR_SPR0);
+
+	#elif	SPI_PRESCALER == DIVIDED_BY_16
+			CLR_BIT(SPSR, SPSR_SPI2X);
+			CLR_BIT(SPCR, SPCR_SPR1);
+			SET_BIT(SPCR, SPCR_SPR0);
+
+	#elif	SPI_PRESCALER == DIVIDED_BY_32
+			SRT_BIT(SPSR, SPSR_SPI2X);
+			SRT_BIT(SPCR, SPCR_SPR1);
+			CLR_BIT(SPCR, SPCR_SPR0);
+
+	#elif	SPI_PRESCALER == DIVIDED_BY_64
+			CLR_BIT(SPSR, SPSR_SPI2X);	// or set
+			SET_BIT(SPCR, SPCR_SPR1);
+			CLR_BIT(SPCR, SPCR_SPR0);	// or set
+
+	#elif	SPI_PRESCALER == DIVIDED_BY_128
+			CLR_BIT(SPSR, SPSR_SPI2X);
+			SET_BIT(SPCR, SPCR_SPR1);
+			SET_BIT(SPCR, SPCR_SPR0);
+
+	#else
+		#error	Wrong SPI_PRESCALER Configuration Option
+	#endif
+
+	/* 6- Interrupt Enable */
+	#if		SPI_INTERRUPT_STATUS == ENABLED
+			/* Don't forget to enable the global interrupt */
+			SET_BIT(SPCR, SPCR_SPIE);
+	#elif	SPI_INTERRUPT_STATUS == DISABLED
+			CLR_BIT(SPCR, SPCR_SPIE);
+	#else
+		#error	Wrong SPI_INTERRUPT_STATUS Configuration Option
+	#endif
+
+
+	/* 7- The last stage is to enable SPI for any operation */
+	SET_BIT(SPCR, SPCR_SPE);
+}
+
+
+
+u8 SPI_u8Transcieve(u8 Copy_u8Data)
+{
+	u8 Local_u8Data;
+	Local_u8Data = SPDR;
+	SPDR = Copy_u8Data;
+	while(GET_BIT(SPSR, SPSR_SPIF) == 0);
+
+	return Local_u8Data;
+}

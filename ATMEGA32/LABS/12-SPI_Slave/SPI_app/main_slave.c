@@ -1,0 +1,38 @@
+/*****************************************************************************************/
+/*****************************************************************************************/
+/***********************		AUTHOR	:	MOHAMED HARB		**************************/
+/***********************		LAYER	:	APP					**************************/
+/***********************		SWC		:	MAIN				**************************/
+/***********************		DATE	:	OCT 30, 2023		**************************/
+/***********************		VERSION	:	V01					**************************/
+/*****************************************************************************************/
+/*****************************************************************************************/
+
+#include "../SPI_driver/PORT_interface.h"
+#include "../SPI_driver/DIO_interface.h"
+#include "../SPI_driver/SPI_interface.h"
+#include "avr/delay.h"
+
+
+int main()
+{
+	u8 Local_u8RecievedData;
+
+	PORT_voidInit();
+	SPI_voidInit();
+
+	while (1)
+	{
+		Local_u8RecievedData = SPI_u8Transcieve(2);
+		if(Local_u8RecievedData == 1)
+		{
+			DIO_voidSetPinValue(DIO_u8PORTD, DIO_u8PIN0, DIO_u8PIN_HIGH);
+		}
+		else if(Local_u8RecievedData == 0)
+		{
+			DIO_voidSetPinValue(DIO_u8PORTD, DIO_u8PIN0, DIO_u8PIN_LOW);
+		}
+	}
+
+	return 0;
+}

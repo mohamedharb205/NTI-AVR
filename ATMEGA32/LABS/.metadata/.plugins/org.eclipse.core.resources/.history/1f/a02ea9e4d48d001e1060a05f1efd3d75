@@ -1,0 +1,13 @@
+/*
+ * SPI_private.h
+ *
+ *  Created on: Nov 28, 2023
+ *      Author: EngMoS
+ */
+
+#ifndef SPI_DRIVER_SPI_PRIVATE_H_
+#define SPI_DRIVER_SPI_PRIVATE_H_
+
+
+
+#endif /* SPI_DRIVER_SPI_PRIVATE_H_ */

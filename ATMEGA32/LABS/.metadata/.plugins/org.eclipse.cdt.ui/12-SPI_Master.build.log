@@ -1,0 +1,20 @@
+18:54:11 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5762 bytes (17.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+18:54:12 Build Finished (took 185ms)
+

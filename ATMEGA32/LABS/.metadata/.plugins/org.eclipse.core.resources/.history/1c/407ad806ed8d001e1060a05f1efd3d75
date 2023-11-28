@@ -1,0 +1,40 @@
+/*****************************************************************************************/
+/*****************************************************************************************/
+/***********************		AUTHOR	:	MOHAMED HARB		**************************/
+/***********************		LAYER	:	MCAL				**************************/
+/***********************		SWC		:	SPI					**************************/
+/***********************		DATE	:	OCT 30, 2023		**************************/
+/***********************		VERSION	:	V01					**************************/
+/*****************************************************************************************/
+/*****************************************************************************************/
+
+#ifndef SPI_DRIVER_SPI_PRIVATE_H_
+#define SPI_DRIVER_SPI_PRIVATE_H_
+
+
+#define MASTER			1
+#define SLAVE			2
+
+#define LSB				1
+#define MSB				2
+
+#define IDLE_LOW		1
+#define IDLE_HIGH		2
+
+#define SAMPLE			1
+#define SETUP			2
+
+#define PRESCALER_MASK	0b00000111
+
+#define DIVIDED_BY_2	0b00000100
+#define DIVIDED_BY_4	0b00000000
+#define DIVIDED_BY_8	0b00000101
+#define DIVIDED_BY_16	0b00000001
+#define DIVIDED_BY_32	0b00000110
+#define DIVIDED_BY_64	0b00000010		// or 0b00000111
+#define DIVIDED_BY_128	0b00000011
+
+#define ENABLED			1
+#define DISABLED		2
+
+#endif /* SPI_DRIVER_SPI_PRIVATE_H_ */

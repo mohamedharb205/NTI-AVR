@@ -1,0 +1,48 @@
+/*****************************************************************************************/
+/*****************************************************************************************/
+/***********************		AUTHOR	:	MOHAMED HARB		**************************/
+/***********************		LAYER	:	APP					**************************/
+/***********************		SWC		:	MAIN				**************************/
+/***********************		DATE	:	OCT 30, 2023		**************************/
+/***********************		VERSION	:	V01					**************************/
+/*****************************************************************************************/
+/*****************************************************************************************/
+
+#include "../SPI_driver/PORT_interface.h"
+#include "../SPI_driver/DIO_interface.h"
+#include "../SPI_driver/SPI_interface.h"
+#include "avr/delay.h"
+
+
+int main()
+{
+	PORT_voidInit();
+	u8 Local_u8Data;
+
+	SPI_voidInit();
+
+	while (1)
+	{
+		SPI_u8Transcieve(1);
+		_de
+		LCD_voidGoToXY(0,0);
+		LCD_voidWriteCharacter(Local_u8Data);
+
+		if (Local_u8Data == '1')
+		{
+			DIO_voidSetPinValue(DIO_u8PORTC, DIO_u8PIN0, DIO_u8PIN_HIGH);
+		}
+		else if (Local_u8Data == '2')
+		{
+			DIO_voidSetPinValue(DIO_u8PORTC, DIO_u8PIN0, DIO_u8PIN_LOW);
+		}
+		else
+		{
+
+		}
+
+		USART_Transmit('D');
+	}
+
+	return 0;
+}

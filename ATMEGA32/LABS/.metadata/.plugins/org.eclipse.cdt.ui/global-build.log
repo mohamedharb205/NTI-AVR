@@ -1,1201 +1,1024 @@
-10:16:09 **** Build of configuration Debug for project RTOS ****
+17:03:27 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
 make all 
-Building file: ../RTOS_driver/DIO_program.c
+Building file: ../SPI_app/00-main.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/DIO_program.d" -MT"RTOS_driver/DIO_program.o" -c -o "RTOS_driver/DIO_program.o" "../RTOS_driver/DIO_program.c"
-Finished building: ../RTOS_driver/DIO_program.c
- 
-Building file: ../RTOS_driver/GIE_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/GIE_program.d" -MT"RTOS_driver/GIE_program.o" -c -o "RTOS_driver/GIE_program.o" "../RTOS_driver/GIE_program.c"
-../RTOS_driver/GIE_program.c: In function 'GIE_voidEnableGlobal':
-../RTOS_driver/GIE_program.c:22: error: expected ')' before 'u8'
-../RTOS_driver/GIE_program.c:22: warning: type defaults to 'int' in declaration of 'type name'
-../RTOS_driver/GIE_program.c:22: error: invalid type argument of 'unary *' (have 'int')
-make: *** [RTOS_driver/GIE_program.o] Error 1
-10:16:48 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/GIE_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/GIE_program.d" -MT"RTOS_driver/GIE_program.o" -c -o "RTOS_driver/GIE_program.o" "../RTOS_driver/GIE_program.c"
-Finished building: ../RTOS_driver/GIE_program.c
- 
-Building file: ../RTOS_driver/RTOS_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/RTOS_program.d" -MT"RTOS_driver/RTOS_program.o" -c -o "RTOS_driver/RTOS_program.o" "../RTOS_driver/RTOS_program.c"
-Finished building: ../RTOS_driver/RTOS_program.c
- 
-Building file: ../RTOS_driver/TIMER0_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/TIMER0_program.d" -MT"RTOS_driver/TIMER0_program.o" -c -o "RTOS_driver/TIMER0_program.o" "../RTOS_driver/TIMER0_program.c"
-Finished building: ../RTOS_driver/TIMER0_program.c
- 
-Building file: ../RTOS_apps/main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
-In file included from ../RTOS_apps/main.c:24:
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"SPI_app/00-main.d" -MT"SPI_app/00-main.o" -c -o "SPI_app/00-main.o" "../SPI_app/00-main.c"
+In file included from ../SPI_app/00-main.c:14:
+d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../SPI_app/00-main.c:14:
 d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../RTOS_apps/main.c
+Finished building: ../SPI_app/00-main.c
  
-Building target: RTOS.elf
+Building target: 12-SPI_Master.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
+avr-gcc -Wl,-Map,12-SPI_Master.map -mmcu=atmega32 -o "12-SPI_Master.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/00-main.o   
+Finished building target: 12-SPI_Master.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
+avr-objdump -h -S 12-SPI_Master.elf  >"12-SPI_Master.lss"
+Finished building: 12-SPI_Master.lss
  
 Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Master.elf  "12-SPI_Master.hex"
+Finished building: 12-SPI_Master.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3174 bytes (9.7% Full)
+Program:    5534 bytes (16.9% Full)
 (.text + .data + .bootloader)
 
-Data:         29 bytes (1.4% Full)
+Data:          8 bytes (0.4% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:17:25 **** Incremental Build of configuration Debug for project RTOS ****
+17:03:47 **** Incremental Build of configuration Debug for project 01-DIO ****
 make all 
-Building file: ../RTOS_apps/main.c
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6654 bytes (20.3% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:03:47 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
+make all 
+Building file: ../SPI_app/00-main.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
-In file included from ../RTOS_apps/main.c:24:
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"SPI_app/00-main.d" -MT"SPI_app/00-main.o" -c -o "SPI_app/00-main.o" "../SPI_app/00-main.c"
+In file included from ../SPI_app/00-main.c:14:
+d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../SPI_app/00-main.c:14:
 d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../RTOS_apps/main.c
+Finished building: ../SPI_app/00-main.c
  
-Building target: RTOS.elf
+Building target: 12-SPI_Master.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
+avr-gcc -Wl,-Map,12-SPI_Master.map -mmcu=atmega32 -o "12-SPI_Master.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/00-main.o   
+Finished building target: 12-SPI_Master.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
+avr-objdump -h -S 12-SPI_Master.elf  >"12-SPI_Master.lss"
+Finished building: 12-SPI_Master.lss
  
 Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Master.elf  "12-SPI_Master.hex"
+Finished building: 12-SPI_Master.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3174 bytes (9.7% Full)
+Program:    5768 bytes (17.6% Full)
 (.text + .data + .bootloader)
 
-Data:         29 bytes (1.4% Full)
+Data:          8 bytes (0.4% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:19:24 **** Incremental Build of configuration Debug for project RTOS ****
+17:03:49 **** Incremental Build of configuration Debug for project 12-SPI_Slave ****
 make all 
-Building file: ../RTOS_driver/GIE_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/GIE_program.d" -MT"RTOS_driver/GIE_program.o" -c -o "RTOS_driver/GIE_program.o" "../RTOS_driver/GIE_program.c"
-Finished building: ../RTOS_driver/GIE_program.c
- 
-Building file: ../RTOS_driver/TIMER0_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/TIMER0_program.d" -MT"RTOS_driver/TIMER0_program.o" -c -o "RTOS_driver/TIMER0_program.o" "../RTOS_driver/TIMER0_program.c"
-Finished building: ../RTOS_driver/TIMER0_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 12-SPI_Slave.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3164 bytes (9.7% Full)
+Program:    2452 bytes (7.5% Full)
 (.text + .data + .bootloader)
 
-Data:         29 bytes (1.4% Full)
+Data:          0 bytes (0.0% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:20:32 **** Incremental Build of configuration Debug for project RTOS ****
+17:06:42 **** Incremental Build of configuration Debug for project 01-DIO ****
 make all 
-Building file: ../RTOS_driver/TIMER0_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/TIMER0_program.d" -MT"RTOS_driver/TIMER0_program.o" -c -o "RTOS_driver/TIMER0_program.o" "../RTOS_driver/TIMER0_program.c"
-Finished building: ../RTOS_driver/TIMER0_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3182 bytes (9.7% Full)
+Program:    6654 bytes (20.3% Full)
 (.text + .data + .bootloader)
 
-Data:         30 bytes (1.5% Full)
+Data:          8 bytes (0.4% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:21:13 **** Incremental Build of configuration Debug for project RTOS ****
+17:06:43 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
 make all 
-Building file: ../RTOS_driver/TIMER0_program.c
+Building file: ../SPI_driver/SPI_program.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/TIMER0_program.d" -MT"RTOS_driver/TIMER0_program.o" -c -o "RTOS_driver/TIMER0_program.o" "../RTOS_driver/TIMER0_program.c"
-Finished building: ../RTOS_driver/TIMER0_program.c
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"SPI_driver/SPI_program.d" -MT"SPI_driver/SPI_program.o" -c -o "SPI_driver/SPI_program.o" "../SPI_driver/SPI_program.c"
+Finished building: ../SPI_driver/SPI_program.c
  
-Building target: RTOS.elf
+Building target: 12-SPI_Master.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
+avr-gcc -Wl,-Map,12-SPI_Master.map -mmcu=atmega32 -o "12-SPI_Master.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/00-main.o   
+Finished building target: 12-SPI_Master.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
+avr-objdump -h -S 12-SPI_Master.elf  >"12-SPI_Master.lss"
+Finished building: 12-SPI_Master.lss
  
 Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Master.elf  "12-SPI_Master.hex"
+Finished building: 12-SPI_Master.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3150 bytes (9.6% Full)
+Program:    5768 bytes (17.6% Full)
 (.text + .data + .bootloader)
 
-Data:         30 bytes (1.5% Full)
+Data:          8 bytes (0.4% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:21:55 **** Incremental Build of configuration Debug for project RTOS ****
+17:06:44 **** Incremental Build of configuration Debug for project 12-SPI_Slave ****
 make all 
-Building file: ../RTOS_driver/TIMER0_program.c
+Building file: ../SPI_driver/SPI_program.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/TIMER0_program.d" -MT"RTOS_driver/TIMER0_program.o" -c -o "RTOS_driver/TIMER0_program.o" "../RTOS_driver/TIMER0_program.c"
-Finished building: ../RTOS_driver/TIMER0_program.c
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"SPI_driver/SPI_program.d" -MT"SPI_driver/SPI_program.o" -c -o "SPI_driver/SPI_program.o" "../SPI_driver/SPI_program.c"
+Finished building: ../SPI_driver/SPI_program.c
  
-Building target: RTOS.elf
+Building target: 12-SPI_Slave.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
+avr-gcc -Wl,-Map,12-SPI_Slave.map -mmcu=atmega32 -o "12-SPI_Slave.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/00-main.o   
+Finished building target: 12-SPI_Slave.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
+avr-objdump -h -S 12-SPI_Slave.elf  >"12-SPI_Slave.lss"
+Finished building: 12-SPI_Slave.lss
  
 Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Slave.elf  "12-SPI_Slave.hex"
+Finished building: 12-SPI_Slave.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 12-SPI_Slave.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3182 bytes (9.7% Full)
+Program:    2452 bytes (7.5% Full)
 (.text + .data + .bootloader)
 
-Data:         30 bytes (1.5% Full)
+Data:          0 bytes (0.0% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:23:08 **** Incremental Build of configuration Debug for project RTOS ****
+17:07:05 **** Incremental Build of configuration Debug for project 01-DIO ****
 make all 
-Building file: ../RTOS_driver/TIMER0_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/TIMER0_program.d" -MT"RTOS_driver/TIMER0_program.o" -c -o "RTOS_driver/TIMER0_program.o" "../RTOS_driver/TIMER0_program.c"
-Finished building: ../RTOS_driver/TIMER0_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3198 bytes (9.8% Full)
+Program:    6654 bytes (20.3% Full)
 (.text + .data + .bootloader)
 
-Data:         30 bytes (1.5% Full)
+Data:          8 bytes (0.4% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:24:27 **** Incremental Build of configuration Debug for project RTOS ****
+17:07:06 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
 make all 
-Building file: ../RTOS_apps/main.c
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5768 bytes (17.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:07:06 **** Incremental Build of configuration Debug for project 12-SPI_Slave ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2452 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:20:30 **** Incremental Build of configuration Debug for project 01-DIO ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6654 bytes (20.3% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:20:31 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5768 bytes (17.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:20:31 **** Incremental Build of configuration Debug for project 12-SPI_Slave ****
+make all 
+Building file: ../SPI_driver/SPI_program.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
-In file included from ../RTOS_apps/main.c:24:
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"SPI_driver/SPI_program.d" -MT"SPI_driver/SPI_program.o" -c -o "SPI_driver/SPI_program.o" "../SPI_driver/SPI_program.c"
+Finished building: ../SPI_driver/SPI_program.c
+ 
+Building target: 12-SPI_Slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,12-SPI_Slave.map -mmcu=atmega32 -o "12-SPI_Slave.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/00-main.o   
+Finished building target: 12-SPI_Slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S 12-SPI_Slave.elf  >"12-SPI_Slave.lss"
+Finished building: 12-SPI_Slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Slave.elf  "12-SPI_Slave.hex"
+Finished building: 12-SPI_Slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2446 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:20:40 **** Incremental Build of configuration Debug for project 01-DIO ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6654 bytes (20.3% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:20:41 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
+make all 
+Building file: ../SPI_driver/SPI_program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"SPI_driver/SPI_program.d" -MT"SPI_driver/SPI_program.o" -c -o "SPI_driver/SPI_program.o" "../SPI_driver/SPI_program.c"
+Finished building: ../SPI_driver/SPI_program.c
+ 
+Building target: 12-SPI_Master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,12-SPI_Master.map -mmcu=atmega32 -o "12-SPI_Master.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/00-main.o   
+Finished building target: 12-SPI_Master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S 12-SPI_Master.elf  >"12-SPI_Master.lss"
+Finished building: 12-SPI_Master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Master.elf  "12-SPI_Master.hex"
+Finished building: 12-SPI_Master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5762 bytes (17.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:20:43 **** Incremental Build of configuration Debug for project 12-SPI_Slave ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2446 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:33:33 **** Incremental Build of configuration Debug for project 01-DIO ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6654 bytes (20.3% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:33:33 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5762 bytes (17.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:33:34 **** Incremental Build of configuration Debug for project 12-SPI_Slave ****
+make all 
+Building file: ../SPI_app/00-main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"SPI_app/00-main.d" -MT"SPI_app/00-main.o" -c -o "SPI_app/00-main.o" "../SPI_app/00-main.c"
+In file included from ../SPI_app/00-main.c:14:
+d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../SPI_app/00-main.c:14:
 d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../RTOS_apps/main.c
+Finished building: ../SPI_app/00-main.c
  
-Building target: RTOS.elf
+Building target: 12-SPI_Slave.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
+avr-gcc -Wl,-Map,12-SPI_Slave.map -mmcu=atmega32 -o "12-SPI_Slave.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/00-main.o   
+Finished building target: 12-SPI_Slave.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
+avr-objdump -h -S 12-SPI_Slave.elf  >"12-SPI_Slave.lss"
+Finished building: 12-SPI_Slave.lss
  
 Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Slave.elf  "12-SPI_Slave.hex"
+Finished building: 12-SPI_Slave.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 12-SPI_Slave.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3198 bytes (9.8% Full)
+Program:    2448 bytes (7.5% Full)
 (.text + .data + .bootloader)
 
-Data:         30 bytes (1.5% Full)
+Data:          0 bytes (0.0% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:24:58 **** Incremental Build of configuration Debug for project RTOS ****
+17:35:07 **** Incremental Build of configuration Debug for project 01-DIO ****
 make all 
-Building file: ../RTOS_apps/main.c
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6654 bytes (20.3% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:35:08 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5762 bytes (17.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:35:09 **** Incremental Build of configuration Debug for project 12-SPI_Slave ****
+make all 
+Building file: ../SPI_app/00-main.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
-In file included from ../RTOS_apps/main.c:24:
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"SPI_app/00-main.d" -MT"SPI_app/00-main.o" -c -o "SPI_app/00-main.o" "../SPI_app/00-main.c"
+In file included from ../SPI_app/00-main.c:14:
+d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../SPI_app/00-main.c:14:
 d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../RTOS_apps/main.c
+Finished building: ../SPI_app/00-main.c
  
-Building target: RTOS.elf
+Building target: 12-SPI_Slave.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
+avr-gcc -Wl,-Map,12-SPI_Slave.map -mmcu=atmega32 -o "12-SPI_Slave.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/00-main.o   
+Finished building target: 12-SPI_Slave.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
+avr-objdump -h -S 12-SPI_Slave.elf  >"12-SPI_Slave.lss"
+Finished building: 12-SPI_Slave.lss
  
 Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Slave.elf  "12-SPI_Slave.hex"
+Finished building: 12-SPI_Slave.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 12-SPI_Slave.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    6318 bytes (19.3% Full)
+Program:    2448 bytes (7.5% Full)
 (.text + .data + .bootloader)
 
-Data:         38 bytes (1.9% Full)
+Data:          0 bytes (0.0% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:29:25 **** Incremental Build of configuration Debug for project RTOS ****
+18:48:18 **** Incremental Build of configuration Debug for project 01-DIO ****
 make all 
-Building file: ../RTOS_apps/main.c
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6654 bytes (20.3% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:48:18 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
+make all 
+Building file: ../SPI_driver/SPI_program.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
-In file included from ../RTOS_apps/main.c:24:
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"SPI_driver/SPI_program.d" -MT"SPI_driver/SPI_program.o" -c -o "SPI_driver/SPI_program.o" "../SPI_driver/SPI_program.c"
+Finished building: ../SPI_driver/SPI_program.c
+ 
+Building target: 12-SPI_Master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,12-SPI_Master.map -mmcu=atmega32 -o "12-SPI_Master.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/00-main.o   
+Finished building target: 12-SPI_Master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S 12-SPI_Master.elf  >"12-SPI_Master.lss"
+Finished building: 12-SPI_Master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Master.elf  "12-SPI_Master.hex"
+Finished building: 12-SPI_Master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5762 bytes (17.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:48:19 **** Incremental Build of configuration Debug for project 12-SPI_Slave ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2448 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:48:27 **** Incremental Build of configuration Debug for project 01-DIO ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6654 bytes (20.3% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:48:27 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5762 bytes (17.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:48:28 **** Incremental Build of configuration Debug for project 12-SPI_Slave ****
+make all 
+Building file: ../SPI_driver/SPI_program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"SPI_driver/SPI_program.d" -MT"SPI_driver/SPI_program.o" -c -o "SPI_driver/SPI_program.o" "../SPI_driver/SPI_program.c"
+Finished building: ../SPI_driver/SPI_program.c
+ 
+Building target: 12-SPI_Slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,12-SPI_Slave.map -mmcu=atmega32 -o "12-SPI_Slave.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/00-main.o   
+Finished building target: 12-SPI_Slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S 12-SPI_Slave.elf  >"12-SPI_Slave.lss"
+Finished building: 12-SPI_Slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Slave.elf  "12-SPI_Slave.hex"
+Finished building: 12-SPI_Slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2448 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:49:20 **** Incremental Build of configuration Debug for project 01-DIO ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6654 bytes (20.3% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:49:20 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
+make all 
+Building file: ../SPI_app/00-main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"SPI_app/00-main.d" -MT"SPI_app/00-main.o" -c -o "SPI_app/00-main.o" "../SPI_app/00-main.c"
+In file included from ../SPI_app/00-main.c:14:
+d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../SPI_app/00-main.c:14:
 d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../RTOS_apps/main.c
+Finished building: ../SPI_app/00-main.c
  
-Building target: RTOS.elf
+Building target: 12-SPI_Master.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
+avr-gcc -Wl,-Map,12-SPI_Master.map -mmcu=atmega32 -o "12-SPI_Master.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/00-main.o   
+Finished building target: 12-SPI_Master.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
+avr-objdump -h -S 12-SPI_Master.elf  >"12-SPI_Master.lss"
+Finished building: 12-SPI_Master.lss
  
 Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Master.elf  "12-SPI_Master.hex"
+Finished building: 12-SPI_Master.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    6330 bytes (19.3% Full)
+Program:    5762 bytes (17.6% Full)
 (.text + .data + .bootloader)
 
-Data:         38 bytes (1.9% Full)
+Data:          8 bytes (0.4% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:30:17 **** Incremental Build of configuration Debug for project RTOS ****
+18:49:21 **** Incremental Build of configuration Debug for project 12-SPI_Slave ****
 make all 
-Building file: ../RTOS_apps/main.c
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2448 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:50:40 **** Incremental Build of configuration Debug for project 01-DIO ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6654 bytes (20.3% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:50:40 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
+make all 
+Building target: 12-SPI_Master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,12-SPI_Master.map -mmcu=atmega32 -o "12-SPI_Master.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/00-main.o   
+Finished building target: 12-SPI_Master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S 12-SPI_Master.elf  >"12-SPI_Master.lss"
+Finished building: 12-SPI_Master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Master.elf  "12-SPI_Master.hex"
+Finished building: 12-SPI_Master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5762 bytes (17.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:50:41 **** Incremental Build of configuration Debug for project 12-SPI_Slave ****
+make all 
+Building target: 12-SPI_Slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,12-SPI_Slave.map -mmcu=atmega32 -o "12-SPI_Slave.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/00-main.o   
+Finished building target: 12-SPI_Slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S 12-SPI_Slave.elf  >"12-SPI_Slave.lss"
+Finished building: 12-SPI_Slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Slave.elf  "12-SPI_Slave.hex"
+Finished building: 12-SPI_Slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2448 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:50:43 **** Incremental Build of configuration Debug for project 01-DIO ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6654 bytes (20.3% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:50:44 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5762 bytes (17.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:50:44 **** Incremental Build of configuration Debug for project 12-SPI_Slave ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 12-SPI_Slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2448 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:54:07 **** Incremental Build of configuration Debug for project 01-DIO ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6654 bytes (20.3% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:54:07 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
+make all 
+Building file: ../SPI_app/main_master.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
-In file included from ../RTOS_apps/main.c:24:
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SPI_app/main_master.d" -MT"SPI_app/main_master.o" -c -o "SPI_app/main_master.o" "../SPI_app/main_master.c"
+In file included from ../SPI_app/main_master.c:14:
+d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../SPI_app/main_master.c:14:
 d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../RTOS_apps/main.c
+Finished building: ../SPI_app/main_master.c
  
-Building target: RTOS.elf
+Building target: 12-SPI_Master.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
+avr-gcc -Wl,-Map,12-SPI_Master.map -mmcu=atmega32 -o "12-SPI_Master.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/main_master.o   
+Finished building target: 12-SPI_Master.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
+avr-objdump -h -S 12-SPI_Master.elf  >"12-SPI_Master.lss"
+Finished building: 12-SPI_Master.lss
  
 Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Master.elf  "12-SPI_Master.hex"
+Finished building: 12-SPI_Master.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    6334 bytes (19.3% Full)
+Program:    5762 bytes (17.6% Full)
 (.text + .data + .bootloader)
 
-Data:         38 bytes (1.9% Full)
+Data:          8 bytes (0.4% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:30:45 **** Incremental Build of configuration Debug for project RTOS ****
+18:54:08 **** Incremental Build of configuration Debug for project 12-SPI_Slave ****
 make all 
-Building file: ../RTOS_driver/TIMER0_program.c
+Building file: ../SPI_app/main_slave.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/TIMER0_program.d" -MT"RTOS_driver/TIMER0_program.o" -c -o "RTOS_driver/TIMER0_program.o" "../RTOS_driver/TIMER0_program.c"
-Finished building: ../RTOS_driver/TIMER0_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6334 bytes (19.3% Full)
-(.text + .data + .bootloader)
-
-Data:         38 bytes (1.9% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-10:33:37 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/TIMER0_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/TIMER0_program.d" -MT"RTOS_driver/TIMER0_program.o" -c -o "RTOS_driver/TIMER0_program.o" "../RTOS_driver/TIMER0_program.c"
-Finished building: ../RTOS_driver/TIMER0_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6334 bytes (19.3% Full)
-(.text + .data + .bootloader)
-
-Data:         38 bytes (1.9% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-10:36:34 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/TIMER0_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/TIMER0_program.d" -MT"RTOS_driver/TIMER0_program.o" -c -o "RTOS_driver/TIMER0_program.o" "../RTOS_driver/TIMER0_program.c"
-../RTOS_driver/TIMER0_program.c: In function 'Timer0_voidInit':
-../RTOS_driver/TIMER0_program.c:80: warning: implicit declaration of function 'GIE'
-Finished building: ../RTOS_driver/TIMER0_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-./RTOS_driver/TIMER0_program.o: In function `Timer0_voidInit':
-../RTOS_driver/TIMER0_program.c:78: undefined reference to `GIE'
-make: *** [RTOS.elf] Error 1
-10:36:56 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/TIMER0_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/TIMER0_program.d" -MT"RTOS_driver/TIMER0_program.o" -c -o "RTOS_driver/TIMER0_program.o" "../RTOS_driver/TIMER0_program.c"
-Finished building: ../RTOS_driver/TIMER0_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6338 bytes (19.3% Full)
-(.text + .data + .bootloader)
-
-Data:         38 bytes (1.9% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-10:37:05 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_apps/main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
-In file included from ../RTOS_apps/main.c:24:
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"SPI_app/main_slave.d" -MT"SPI_app/main_slave.o" -c -o "SPI_app/main_slave.o" "../SPI_app/main_slave.c"
+In file included from ../SPI_app/main_slave.c:14:
+d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../SPI_app/main_slave.c:14:
 d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../RTOS_apps/main.c
+Finished building: ../SPI_app/main_slave.c
  
-Building target: RTOS.elf
+Building target: 12-SPI_Slave.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
+avr-gcc -Wl,-Map,12-SPI_Slave.map -mmcu=atmega32 -o "12-SPI_Slave.elf"  ./SPI_driver/DIO_program.o ./SPI_driver/PORT_program.o ./SPI_driver/SPI_program.o  ./SPI_app/main_slave.o   
+Finished building target: 12-SPI_Slave.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
+avr-objdump -h -S 12-SPI_Slave.elf  >"12-SPI_Slave.lss"
+Finished building: 12-SPI_Slave.lss
  
 Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 12-SPI_Slave.elf  "12-SPI_Slave.hex"
+Finished building: 12-SPI_Slave.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 12-SPI_Slave.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    6334 bytes (19.3% Full)
+Program:    2448 bytes (7.5% Full)
 (.text + .data + .bootloader)
 
-Data:         38 bytes (1.9% Full)
+Data:          0 bytes (0.0% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:37:19 **** Incremental Build of configuration Debug for project RTOS ****
+18:54:11 **** Incremental Build of configuration Debug for project 01-DIO ****
 make all 
-Building file: ../RTOS_apps/main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
-In file included from ../RTOS_apps/main.c:24:
-d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../RTOS_apps/main.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 01-DIO.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    6330 bytes (19.3% Full)
+Program:    6654 bytes (20.3% Full)
 (.text + .data + .bootloader)
 
-Data:         38 bytes (1.9% Full)
+Data:          8 bytes (0.4% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:38:45 **** Incremental Build of configuration Debug for project RTOS ****
+18:54:11 **** Incremental Build of configuration Debug for project 12-SPI_Master ****
 make all 
-Building file: ../RTOS_driver/RTOS_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/RTOS_program.d" -MT"RTOS_driver/RTOS_program.o" -c -o "RTOS_driver/RTOS_program.o" "../RTOS_driver/RTOS_program.c"
-../RTOS_driver/RTOS_program.c:19: warning: initialization makes integer from pointer without a cast
-../RTOS_driver/RTOS_program.c: In function 'RTOS_voidStop':
-../RTOS_driver/RTOS_program.c:41: warning: implicit declaration of function 'GIE_voidDisableGlobal'
-Finished building: ../RTOS_driver/RTOS_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 12-SPI_Master.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    6370 bytes (19.4% Full)
+Program:    5762 bytes (17.6% Full)
 (.text + .data + .bootloader)
 
-Data:         41 bytes (2.0% Full)
+Data:          8 bytes (0.4% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:39:09 **** Incremental Build of configuration Debug for project RTOS ****
+18:54:12 **** Incremental Build of configuration Debug for project 12-SPI_Slave ****
 make all 
-Building file: ../RTOS_driver/RTOS_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/RTOS_program.d" -MT"RTOS_driver/RTOS_program.o" -c -o "RTOS_driver/RTOS_program.o" "../RTOS_driver/RTOS_program.c"
-../RTOS_driver/RTOS_program.c:20: warning: initialization makes integer from pointer without a cast
-Finished building: ../RTOS_driver/RTOS_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
+avr-size --format=avr --mcu=atmega32 12-SPI_Slave.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    6370 bytes (19.4% Full)
+Program:    2448 bytes (7.5% Full)
 (.text + .data + .bootloader)
 
-Data:         41 bytes (2.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-10:39:34 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/RTOS_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/RTOS_program.d" -MT"RTOS_driver/RTOS_program.o" -c -o "RTOS_driver/RTOS_program.o" "../RTOS_driver/RTOS_program.c"
-Finished building: ../RTOS_driver/RTOS_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6370 bytes (19.4% Full)
-(.text + .data + .bootloader)
-
-Data:         41 bytes (2.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-10:42:09 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/RTOS_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/RTOS_program.d" -MT"RTOS_driver/RTOS_program.o" -c -o "RTOS_driver/RTOS_program.o" "../RTOS_driver/RTOS_program.c"
-../RTOS_driver/RTOS_program.c: In function 'Schedular':
-../RTOS_driver/RTOS_program.c:72: error: expected ')' before '{' token
-../RTOS_driver/RTOS_program.c:76: error: expected expression before '}' token
-make: *** [RTOS_driver/RTOS_program.o] Error 1
-10:42:31 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/RTOS_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/RTOS_program.d" -MT"RTOS_driver/RTOS_program.o" -c -o "RTOS_driver/RTOS_program.o" "../RTOS_driver/RTOS_program.c"
-../RTOS_driver/RTOS_program.c: In function 'Schedular':
-../RTOS_driver/RTOS_program.c:72: error: expected ')' before '{' token
-../RTOS_driver/RTOS_program.c:76: error: expected expression before '}' token
-make: *** [RTOS_driver/RTOS_program.o] Error 1
-10:43:13 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/RTOS_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/RTOS_program.d" -MT"RTOS_driver/RTOS_program.o" -c -o "RTOS_driver/RTOS_program.o" "../RTOS_driver/RTOS_program.c"
-Finished building: ../RTOS_driver/RTOS_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6326 bytes (19.3% Full)
-(.text + .data + .bootloader)
-
-Data:         41 bytes (2.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-10:43:37 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/RTOS_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/RTOS_program.d" -MT"RTOS_driver/RTOS_program.o" -c -o "RTOS_driver/RTOS_program.o" "../RTOS_driver/RTOS_program.c"
-Finished building: ../RTOS_driver/RTOS_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6390 bytes (19.5% Full)
-(.text + .data + .bootloader)
-
-Data:         41 bytes (2.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-10:47:03 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/RTOS_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/RTOS_program.d" -MT"RTOS_driver/RTOS_program.o" -c -o "RTOS_driver/RTOS_program.o" "../RTOS_driver/RTOS_program.c"
-Finished building: ../RTOS_driver/RTOS_program.c
- 
-Building file: ../RTOS_apps/main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
-In file included from ../RTOS_apps/main.c:24:
-d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../RTOS_apps/main.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6434 bytes (19.6% Full)
-(.text + .data + .bootloader)
-
-Data:         41 bytes (2.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-10:48:19 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/RTOS_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/RTOS_program.d" -MT"RTOS_driver/RTOS_program.o" -c -o "RTOS_driver/RTOS_program.o" "../RTOS_driver/RTOS_program.c"
-Finished building: ../RTOS_driver/RTOS_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6416 bytes (19.6% Full)
-(.text + .data + .bootloader)
-
-Data:         39 bytes (1.9% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-10:52:47 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/TIMER0_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/TIMER0_program.d" -MT"RTOS_driver/TIMER0_program.o" -c -o "RTOS_driver/TIMER0_program.o" "../RTOS_driver/TIMER0_program.c"
-Finished building: ../RTOS_driver/TIMER0_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6416 bytes (19.6% Full)
-(.text + .data + .bootloader)
-
-Data:         39 bytes (1.9% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-10:54:17 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/RTOS_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/RTOS_program.d" -MT"RTOS_driver/RTOS_program.o" -c -o "RTOS_driver/RTOS_program.o" "../RTOS_driver/RTOS_program.c"
-Finished building: ../RTOS_driver/RTOS_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6416 bytes (19.6% Full)
-(.text + .data + .bootloader)
-
-Data:         39 bytes (1.9% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-10:54:30 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_apps/main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
-In file included from ../RTOS_apps/main.c:24:
-d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../RTOS_apps/main.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6416 bytes (19.6% Full)
-(.text + .data + .bootloader)
-
-Data:         39 bytes (1.9% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-10:57:22 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_apps/main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
-In file included from ../RTOS_apps/main.c:24:
-d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../RTOS_apps/main.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6420 bytes (19.6% Full)
-(.text + .data + .bootloader)
-
-Data:         39 bytes (1.9% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-10:58:14 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_apps/main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
-In file included from ../RTOS_apps/main.c:24:
-d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-../RTOS_apps/main.c: In function 'main':
-../RTOS_apps/main.c:45: warning: passing argument 3 of 'RTOS_voidCreateTask' makes integer from pointer without a cast
-../RTOS_apps/main.c:45: error: too few arguments to function 'RTOS_voidCreateTask'
-../RTOS_apps/main.c:46: warning: passing argument 3 of 'RTOS_voidCreateTask' makes integer from pointer without a cast
-../RTOS_apps/main.c:46: error: too few arguments to function 'RTOS_voidCreateTask'
-../RTOS_apps/main.c:47: warning: passing argument 3 of 'RTOS_voidCreateTask' makes integer from pointer without a cast
-../RTOS_apps/main.c:47: error: too few arguments to function 'RTOS_voidCreateTask'
-make: *** [RTOS_apps/main.o] Error 1
-10:58:43 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_apps/main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
-In file included from ../RTOS_apps/main.c:24:
-d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../RTOS_apps/main.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6482 bytes (19.8% Full)
-(.text + .data + .bootloader)
-
-Data:         39 bytes (1.9% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-11:29:25 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/TIMER0_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/TIMER0_program.d" -MT"RTOS_driver/TIMER0_program.o" -c -o "RTOS_driver/TIMER0_program.o" "../RTOS_driver/TIMER0_program.c"
-Finished building: ../RTOS_driver/TIMER0_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6624 bytes (20.2% Full)
-(.text + .data + .bootloader)
-
-Data:         39 bytes (1.9% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-11:42:35 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_driver/TIMER0_program.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_driver/TIMER0_program.d" -MT"RTOS_driver/TIMER0_program.o" -c -o "RTOS_driver/TIMER0_program.o" "../RTOS_driver/TIMER0_program.c"
-Finished building: ../RTOS_driver/TIMER0_program.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    6624 bytes (20.2% Full)
-(.text + .data + .bootloader)
-
-Data:         39 bytes (1.9% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-12:53:37 **** Incremental Build of configuration Debug for project RTOS ****
-make all 
-Building file: ../RTOS_apps/main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"RTOS_apps/main.d" -MT"RTOS_apps/main.o" -c -o "RTOS_apps/main.o" "../RTOS_apps/main.c"
-In file included from ../RTOS_apps/main.c:24:
-d:/courses/es/eclipse/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../RTOS_apps/main.c
- 
-Building target: RTOS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTOS.map -mmcu=atmega32 -o "RTOS.elf"  ./RTOS_driver/DIO_program.o ./RTOS_driver/GIE_program.o ./RTOS_driver/RTOS_program.o ./RTOS_driver/TIMER0_program.o  ./RTOS_apps/main.o   
-Finished building target: RTOS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTOS.elf  >"RTOS.lss"
-Finished building: RTOS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS.elf  "RTOS.hex"
-Finished building: RTOS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 RTOS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3522 bytes (10.7% Full)
-(.text + .data + .bootloader)
-
-Data:         31 bytes (1.5% Full)
+Data:          0 bytes (0.0% Full)
 (.data + .bss + .noinit)
 
 
